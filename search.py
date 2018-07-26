@@ -1,7 +1,7 @@
 import datetime
 import praw
 import timeago
-
+from credentials import client,secret
 
 class Job():
     def __init__(self,post):
@@ -15,10 +15,6 @@ def compute_ago(created):
     now = datetime.datetime.now()
     print (timeago.format(date, now))
     return timeago.format(date, now)
-
-
-client = "" # Client ID
-secret = "" # Secret key
 
 # Function to connect to Reddit API
 def connect(cl_id, cl_secret):
@@ -54,15 +50,3 @@ def search_reddit(query):
         print str(post_date.month) + ", " + str(post_date.day) + " in " + str(post_date.year)
     """
     return all.search(query = full_str, sort = "new")
-
-
-
-
-
-
-
-
-
-
-
-
